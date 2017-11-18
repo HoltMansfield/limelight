@@ -28,7 +28,7 @@ export default connect(
       }
     },
   dispatch => { return {
-
+        
       }
     },
 )(ProtectedRoute)

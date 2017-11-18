@@ -34,18 +34,24 @@ export class Login extends Component {
   }
 
   render() {
+    console.log(this.props.loggedInUser)
+    
     return (
       <div>
-        <div><input type="text" placeholder="Username" ref="username" /></div>
+        <div><input type="text" placeholder="Username" ref="username" defaultValue={this.props.debugUserName} /></div>
         <div><button onClick={this.login}>Login</button></div>
       </div>
     )
   }
 }
 
+Login.defaultProps = {
+  debugUserName: 'Sincere@april.biz'
+}
+
 export default connect(
   state => { return {
-
+        loggedInUser: state.loggedInUser
       }
     },
   dispatch => { return {
