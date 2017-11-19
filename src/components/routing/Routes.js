@@ -23,6 +23,7 @@ export class Routes extends Component {
               <Route exact path="/" component={Login} />
               <ProtectedRoute exact path="/dashboard" component={Dashboard} />
               <ProtectedRoute exact path="/posts" component={Posts} />
+              <ProtectedRoute exact path="/albums" component={Albums} />
               <Route component={NotFound} />
           </Switch>
         </div>
