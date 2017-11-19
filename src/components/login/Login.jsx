@@ -33,9 +33,11 @@ export class Login extends Component {
       .catch(() => { })
   }
 
+  componentDidMount() {
+    this.login()
+  }
+
   render() {
-    console.log(this.props.loggedInUser)
-    
     return (
       <div>
         <div><input type="text" placeholder="Username" ref="username" defaultValue={this.props.debugUserName} /></div>
