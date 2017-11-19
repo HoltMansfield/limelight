@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { Collapse, Well } from 'react-bootstrap'
 import * as actions from '../../actions'
+import { Search } from './Search'
 
 export class Posts extends Component {
   constructor(props) {
     super(props)
     this.state = { posts: null, comments: null, searchTerms: '' }
+    this.updateSearch = this.updateSearch.bind(this)
   }
 
   componentWillMount() {
@@ -49,9 +51,7 @@ export class Posts extends Component {
     this.setState({ posts })
   }
 
-  updateSearch() {
-    const searchTerms = this.refs.search ? this.refs.search.value : ''
-
+  updateSearch(searchTerms) {
     this.setState({ searchTerms })
   }
 
@@ -101,9 +101,7 @@ export class Posts extends Component {
   render() {
     return (
       <div>
-        <div>
-          <input type="text" placeholder="search" ref="search" onChange={() => this.updateSearch()} />
-        </div>
+        <Search updateSearch={this.updateSearch} />
         <div>
           { this.getPosts() }
         </div>
