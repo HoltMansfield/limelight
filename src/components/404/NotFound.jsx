@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
+import { Grid, Row, Col } from 'react-bootstrap'
 
 export class NotFound extends Component {
   render() {
     return (
-      <div>Not Found</div>
+      <Grid>
+        <Row>
+          <Col>
+            <div>Not Found</div>
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 }

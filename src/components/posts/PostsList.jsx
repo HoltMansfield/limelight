@@ -19,8 +19,7 @@ export class PostsList extends Component {
               </div>
               <Collapse in={this.isPostOpen(index)}>
                 <Panel>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                  { post.body }
                 </Panel>
               </Collapse>
              </Well>

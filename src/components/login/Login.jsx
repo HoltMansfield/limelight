@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { notify } from 'react-notify-toast'
+import { Grid, Row, Col, Button, FormGroup, ControlLabel, FormControl, Form } from 'react-bootstrap'
 import * as actions from '../../actions'
 
 
@@ -42,10 +43,19 @@ export class Login extends Component {
 
   render() {
     return (
-      <div>
-        <div><input type="text" placeholder="Username" ref="username" defaultValue={this.props.debugUserName} /></div>
-        <div><button onClick={this.login}>Login</button></div>
-      </div>
+      <Grid>
+        <Row style={{ textAlign: 'center' }}>
+          <Col>
+            <Form inline>
+              <FormGroup controlId="formInlineEmail">
+                <ControlLabel className="margin-right-5">Username</ControlLabel>
+                <FormControl type="email" ref="username" defaultValue={this.props.debugUserName} className="margin-bottom-10" />
+              </FormGroup>
+            </Form>
+            <div><Button onClick={this.login}>Login</Button></div>
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 }

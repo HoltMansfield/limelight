@@ -12,7 +12,7 @@ export class TopMenu extends Component {
 
   logout() {
     this.props.logOut()
-    notify.show('Logged out', 'success', 1500)
+    notify.show('Logged out', 'success', 500)
   }
 
   renderNavBar() {
@@ -20,16 +20,16 @@ export class TopMenu extends Component {
 
     return (
       <Navbar>
-          <Navbar.Text><Link to="/posts">Posts</Link></Navbar.Text>
-          <Navbar.Text><Link to="/albums">Albums</Link></Navbar.Text>
-          <Navbar.Text><Link to="/toDos">ToDos</Link></Navbar.Text>
-          <Nav pullRight>
-            <NavItem href={ 'http://www.' +loggedInUser.website}>
-              {loggedInUser.name} ({loggedInUser.company.name})
-            </NavItem>
-            <NavItem><span>|</span></NavItem>
-            <NavItem onClick={this.logout} href="#">Logout</NavItem>
-          </Nav>
+        <Navbar.Text><Link to="/posts">Posts</Link></Navbar.Text>
+        <Navbar.Text><Link to="/albums">Albums</Link></Navbar.Text>
+        <Navbar.Text><Link to="/toDos">ToDos</Link></Navbar.Text>
+        <Nav pullRight>
+          <NavItem href={ 'http://www.' +loggedInUser.website}>
+            {loggedInUser.name} ({loggedInUser.company.name})
+          </NavItem>
+          <NavItem><span>|</span></NavItem>
+          <NavItem onClick={this.logout} href="#">Logout</NavItem>
+        </Nav>
       </Navbar>
     )
   }

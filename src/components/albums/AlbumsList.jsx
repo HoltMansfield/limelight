@@ -7,10 +7,11 @@ export class AlbumsList extends Component {
     return this.props.albums.map((album, index) => {
       return <div onClick={() => this.props.selectAlbum(index)}
                   style={{ textAlign: 'left' }}
-                  className="margin-bottom-10"
+                  className="margin-bottom-10 clickable"
+                  title="View Photos"
                   key={album.id}>
                <span className="margin-right-10">{ album.title } ({ album.photos.length } Photos)</span>
-               <Glyphicon glyph="eye-open" title="View Photos" className="clickable" />
+               <Glyphicon glyph="eye-open" className="clickable" />
              </div>
     })
   }

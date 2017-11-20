@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {
-  Route,
-  Redirect
-} from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 
 export class ProtectedRoute extends Component {
@@ -28,7 +25,7 @@ export default connect(
       }
     },
   dispatch => { return {
-        
+
       }
     },
 )(ProtectedRoute)
