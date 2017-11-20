@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem } from 'react-bootstrap'
-import { connect } from 'react-redux'
+import { notify } from 'react-notify-toast'
 
 
 export class TopMenu extends Component {
@@ -12,6 +12,7 @@ export class TopMenu extends Component {
 
   logout() {
     this.props.logOut()
+    notify.show('Logged out', 'success', 1500)
   }
 
   renderNavBar() {

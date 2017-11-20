@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { Grid } from 'react-bootstrap'
 import * as actions from '../../actions'
@@ -60,12 +59,10 @@ export class Posts extends Component {
     }
 
     const filteredPosts = this.state.posts.filter(post => {
-      const matchesTitle = post.title.indexOf(searchTerms) != -1
-      const matchesBody = post.body.indexOf(searchTerms) != -1
+      const matchesTitle = post.title.indexOf(searchTerms) !== -1
+      const matchesBody = post.body.indexOf(searchTerms) !== -1
 
-      if(matchesTitle || matchesBody) {
-        return post
-      }
+      return (matchesTitle || matchesBody)
     })
 
     return filteredPosts

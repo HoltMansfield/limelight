@@ -1,27 +1,19 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import * as actions from '../../actions'
 
-export class Dashboard extends Component {
+
+export default class Dashboard extends Component {
   componentDidMount() {
     //DEV
-    this.props.history.push('/posts')
+    //this.props.history.push('/posts')
   }
 
   render() {
     return (
-      <div>Dashboard view</div>
+      <div>
+        <div>This is the Dashboard view</div>
+        <div>Please enjoy Albums and Posts.</div>
+        <div>ToDos were not completed.</div>
+      </div>
     )
   }
 }
-
-export default connect(
-  state => { return {
-
-      }
-    },
-  dispatch => { return {
-
-      }
-    },
-)(Dashboard)

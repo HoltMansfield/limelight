@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
+import { notify } from 'react-notify-toast'
 import * as actions from '../../actions'
 
 
@@ -26,6 +27,7 @@ export class Login extends Component {
       .then(users => {
         let matchedUser = this.findUser(users, loginAttempt)
         if(matchedUser) {
+          notify.show(`Logged in as ${matchedUser.email}`, 'success', 1500)
           setLoggedInUser(matchedUser)
           history.push('/dashboard')
         }
@@ -33,9 +35,10 @@ export class Login extends Component {
       .catch(() => { })
   }
 
-  componentDidMount() {
-    this.login()
-  }
+  // DEV
+  // componentDidMount() {
+  //   this.login()
+  // }
 
   render() {
     return (
@@ -47,6 +50,7 @@ export class Login extends Component {
   }
 }
 
+// DEV
 Login.defaultProps = {
   debugUserName: 'Sincere@april.biz'
 }

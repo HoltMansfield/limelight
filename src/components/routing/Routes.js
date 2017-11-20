@@ -8,7 +8,6 @@ import Login from '../login/Login'
 import Dashboard from '../dashboard/Dashboard'
 import Posts from '../posts/Posts'
 import Albums from '../albums/Albums'
-import ToDos from '../toDos/ToDos'
 import NotFound from '../404/NotFound'
 
 
