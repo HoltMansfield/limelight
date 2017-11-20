@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Row, Col, Glyphicon } from 'react-bootstrap'
 
 export class Search extends Component {
   handleChange(e) {
@@ -8,9 +9,19 @@ export class Search extends Component {
 
   render() {
     return (
-      <div>
-        <input type="text" placeholder="search" ref="search" onChange={() => this.handleChange()} />
-      </div>
+      <Row className="show-grid margin-bottom-10">
+        <Col>
+          <div className="pull-right">
+            <Glyphicon glyph="search" className="margin-right-5" />
+            <input type="text"
+              placeholder="search"
+              ref="search"
+              onChange={() => this.handleChange()}
+              className="margin-right-15" />
+          </div>
+        </Col>
+      </Row>
+
     )
   }
 }

@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './reducers'
+import reducer from '../../reducers'
 import thunk from 'redux-thunk'
-import App from './components/app/App';
+import App from './App';
 
 it('renders without crashing', () => {
   const store = createStore(

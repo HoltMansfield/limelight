@@ -4,6 +4,7 @@ import * as actions from '../../actions'
 
 export class Dashboard extends Component {
   componentDidMount() {
+    //DEV
     this.props.history.push('/posts')
   }
 
